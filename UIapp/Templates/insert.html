@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD operation</title>
+</head>
+<body>
+    <center>
+      <div margin-top="50px"><h2>Insert record in PostgreSQL</h2></div>
+      <h2 class="i">Welcome to ICICI Bank</h2>
+    <form class="form" method="POST" action="insert1"><br>
+    {% csrf_token %}
+    <table>
+        <h2>Customer Form</h2>
+        <tr>
+            <td>ID</td>
+            <td><input type='number' placeholder='Enter ID' name="id" required></td>
+        </tr><br>
+        <tr>
+            <td>Name</td>
+            <td><input type='text' placeholder='Enter your name' name="Name" required></td>
+        </tr>
+        <tr>
+            <td>Account_Number</td>
+            <td><input type='numbers' placeholder='Enter your Account number' name="Account_Number" required></td>
+        </tr><br>
+        <tr>
+            <td>IFSC_code</td>
+            <td><input type='text' placeholder='Enter your IFSC code' name="IFSC_code" required></td>
+        </tr>
+        <tr>
+            <td>Branch</td>
+            <td><select name="Branch">
+                <option>Select your Branch.........</option>
+                    {% for key,value in choice.items %}
+                    <option value="{{key}}">{{value}}</option>
+                    {% endfor %}
+                  </select></td>
+        </tr>
+        <tr>
+            <td>Mobile_No</td>
+            <td><input type='bigint' placeholder='Enter your Mobile number' name="Mobile_NO" required></td>
+        </tr>
+        <tr>
+            <td>Email_id</td>
+            <td><input type='email' placeholder='Enter your email id' name="Email_id" required></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><input type='text' placeholder='Enter your address' name="Address" required></td>
+        </tr>   
+        </table><br>
+        <center><input class="submit" type="Submit" value="Insert"/></center><br>
+        <center>{{result}}</center>
+    </form>
+    </center>
+<center>
+    <h4><a href="{% url 'list'%}">Back to customers list</a></h4><br>
+</center>
+
+
+
+<style>
+    .i{
+        color: red;
+    }
+    .form{
+        background-color:rgba(59, 72, 223, 0.812);
+        color:white;
+        box-sizing: border-box;
+        border-radius: 12px;
+        position: relative;left:1px;right: 550px ;
+        margin-top:70px;
+        margin-left:10px;
+        margin-bottom:50px;
+        height:450px;
+        width: 500px;
+       }
+       .submit{
+           background-color:rgb(20, 227, 38);
+           color:black;
+           font-weight:bold;
+       
+           border-radius: 12px;
+           
+           height:40px;
+           width: 90px;
+       
+       }
+   
+</style>
+</body>
+</html>

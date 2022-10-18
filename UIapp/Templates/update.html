@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD operation</title>
+</head>
+<body>
+    <center><br>
+        <h2>Update Customer Details</h2>
+    <form class="form" method="POST" action="/update/{{customer.id}}/"><br>
+    {% csrf_token %}
+    <table>
+    <tr>
+        <td>ID</div>
+        <td><input type='numbers' name="id" value="{{customer.id}}" readonly></td>
+    </tr>
+        <tr>
+            <td>Name</div>
+            <td><input type='text' name="Name" value="{{customer.Name}}"></td>
+        </tr>
+        <tr>
+            <td>Account_Number</td>
+            <td><input type='bigint' name="Account_Number" value="{{customer.Account_Number}}"></td>
+        </tr>
+        <tr>
+            <td>IFSC_code</td>
+            <td><input type='text' name="IFSC_code" value="{{customer.IFSC_code}}"></td>
+        </tr>
+        <tr>
+            <td>Branch</td>
+            <td><input type='text' name="Branch" value="{{customer.Branch}}">
+        </tr>
+        <tr>
+            <td>Mobile_No</td>
+            <td><input type='bigint' name="Mobile_NO" value="{{customer.Mobile_NO}}"></td>
+        </tr>
+        <tr>
+            <td>Email_id</td>
+            <td><input type='email' name="Email_id" value="{{customer.Email_id}}"></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><input type='text' name="Address" value="{{customer.Address}}"></td>
+        </tr>       
+        </table><br>
+        <center><input class="submit" type="Submit" value="Update"/></center><br>
+        <center>{{result}}</center>
+    </form>
+    </center>
+</table>
+
+<center>
+    <h4><a href="{% url 'list'%}">Back to customers list</a></h4><br>
+</center>
+
+<style>
+    .form{
+        background-color:rgba(59, 72, 223, 0.812);
+        color:white;
+        box-sizing: border-box;
+        border-radius: 12px;
+        position: relative;left:1px;right: 550px ;
+        margin-top:70px;
+        margin-left:10px;
+        margin-bottom:50px;
+        height:400px;
+        width: 500px;
+       }
+       .submit{
+           background-color:rgb(20, 227, 38);
+           color:black;
+           font-weight:bold;
+       
+           border-radius: 12px;
+           
+           height:40px;
+           width: 90px;
+       
+       }
+</style>
+</body>
+</html>
