@@ -77,11 +77,12 @@ TEMPLATES = [
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME':'Kanini',
         'USER':'postgres',
         'PASSWORD':'Anil@1234',
-        'HOST':'10.0.165.214',
+        'HOST: '',
+        'PORT': '8081'
     }
 }
 
