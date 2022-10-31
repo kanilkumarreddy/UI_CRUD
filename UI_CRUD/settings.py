@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'UI_CRUD.wsgi.application'
+# WSGI_APPLICATION = 'UI_CRUD.wsgi.application'
 
 
 # Database
@@ -82,7 +82,7 @@ DATABASES = {
         'USER':'postgres',
         'PASSWORD':'Anil@1234',
         'HOST': 'localhost', 
-        'PORT': ''
+        'PORT': '5432'
     }
 }
 
