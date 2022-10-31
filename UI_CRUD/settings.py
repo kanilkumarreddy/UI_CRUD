@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-# WSGI_APPLICATION = 'UI_CRUD.wsgi.application'
+WSGI_APPLICATION = 'UI_CRUD.wsgi.application'
 
 
 # Database
